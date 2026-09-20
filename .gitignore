@@ -1,0 +1,16 @@
+# Editor swap/backup files
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local Claude Code state
+.claude/
+
+# NOTE: lazy-lock.json is intentionally tracked - it pins plugin versions.
