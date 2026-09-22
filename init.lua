@@ -64,7 +64,7 @@ local function toggle_min_height()
   end
 end
 
-vim.keymap.set('n', '<space>w', toggle_min_height, { desc = 'toggle between the height of current window full and minimum' })
+vim.keymap.set('n', '<space>t', toggle_min_height, { desc = 'toggle between the height of current window full and minimum' })
 
 -- Go to the next or previous buffer tab
 vim.keymap.set("n", "<space><Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
@@ -72,6 +72,12 @@ vim.keymap.set("n", "<space><S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "
 
 -- Close the current buffer
 vim.keymap.set("n", "<leader>bc", "<cmd>bdelete<cr>", { desc = "Close Buffer" })
+
+-- keymap to replace <C-W> + direction to switch between windows
+vim.keymap.set("n", "<space>wh", "<C-w>h", { desc = "Move to window to the left" })
+vim.keymap.set("n", "<space>wj", "<C-w>j", { desc = "Move to window to the bottom" })
+vim.keymap.set("n", "<space>wk", "<C-w>k", { desc = "Move to window to the top" })
+vim.keymap.set("n", "<space>wl", "<C-w>l", { desc = "Move to window to the right" })
 
 --keymap to set vim as known value for lua lsp
 vim.lsp.config("lua_ls", {
