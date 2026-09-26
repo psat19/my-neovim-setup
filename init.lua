@@ -71,7 +71,12 @@ vim.keymap.set("n", "<space><Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Ne
 vim.keymap.set("n", "<space><S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous Buffer" })
 
 -- Close the current buffer
-vim.keymap.set("n", "<leader>bc", "<cmd>bdelete<cr>", { desc = "Close Buffer" })
+local function closeCurrentBuffer()
+  local current_buf = vim.api.nvim_get_current_buf()
+  vim.cmd("bp | bd " .. current_buf)
+end
+
+vim.keymap.set("n", "<leader>bc", closeCurrentBuffer,{ desc = "Close Buffer" })
 
 -- keymap to replace <C-W> + direction to switch between windows
 vim.keymap.set("n", "<space>wh", "<C-w>h", { desc = "Move to window to the left" })
