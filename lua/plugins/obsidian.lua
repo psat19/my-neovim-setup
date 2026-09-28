@@ -18,8 +18,7 @@ return {
         folder = "daily",
       },
       completion = {
-        nvim_cmp = false,
-        blink = false,
+        blink = true,
       },
     },
     keys = {
