@@ -2,6 +2,7 @@ print("'Hello in go profile'")
 
 require('config.lazy')
 require("config.options")
+require("config.markdown")
 
 vim.g.mapleader = "\\"
 
