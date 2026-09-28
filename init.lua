@@ -3,6 +3,7 @@ print("'Hello in go profile'")
 require('config.lazy')
 require("config.options")
 require("config.markdown")
+require("config.obsidian-sync")
 
 vim.g.mapleader = "\\"
 
