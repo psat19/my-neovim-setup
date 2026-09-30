@@ -34,6 +34,17 @@ return {
 
 	  vim.lsp.enable("gopls")
 
+	  -- Rounded border on all floats (hover, signature help, diagnostics)
+	  vim.o.winborder = "rounded"
+
+	  -- Give floats a distinct background and a colored border
+	  local function float_hl()
+		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#24283b" })
+		vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#7aa2f7", bg = "#24283b" })
+	  end
+	  float_hl()
+	  vim.api.nvim_create_autocmd("ColorScheme", { callback = float_hl })
+
 	  vim.api.nvim_create_autocmd("LspAttach", {
 		callback = function(ev)
 		  local map = function(keys, fn, desc)
@@ -76,10 +87,15 @@ return {
 		['<C-p>'] = false,
 	  },  
 	  completion = {
-		documentation = { auto_show = true, auto_show_delay_ms = 200 },
+		menu = { border = "rounded" },
+		documentation = {
+		  auto_show = true,
+		  auto_show_delay_ms = 200,
+		  window = { border = "rounded" },
+		},
 		ghost_text = { enabled = true },
 	  },
-	  signature = { enabled = true },
+	  signature = { enabled = true, window = { border = "rounded" } },
 	  sources = { default = { "lsp", "path", "snippets", "buffer" } },
 	},
   },
