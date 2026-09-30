@@ -2,7 +2,17 @@ return {
   { "folke/tokyonight.nvim", priority = 1000, config = function()
 	vim.cmd.colorscheme("tokyonight-night")
   end },
-  { "nvim-lualine/lualine.nvim", opts = {} },
+  {
+	"nvim-lualine/lualine.nvim",
+	opts = {
+	  options = { refresh = { statusline = 1000 } }, -- redraw every second so the clock ticks
+	  sections = {
+		lualine_z = {
+		  function() return os.date("%a %d %b  %H:%M") end,
+		},
+	  },
+	},
+  },
   { "lewis6991/gitsigns.nvim", opts = {} },
   { "folke/which-key.nvim", event = "VeryLazy", opts = {} },
   { "stevearc/oil.nvim", opts = {}, keys = { { "-", "<cmd>Oil<cr>", desc = "Open parent dir" } } },
