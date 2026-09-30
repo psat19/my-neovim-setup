@@ -8,7 +8,8 @@ return {
 	  options = { refresh = { statusline = 1000 } }, -- redraw every second so the clock ticks
 	  sections = {
 		lualine_z = {
-		  function() return os.date("%a %d %b  %H:%M") end,
+		  -- IST = UTC+5:30 (19800s), computed from UTC so it ignores the system timezone
+		  function() return os.date("!%a %d %b  %I:%M %p", os.time() + 19800) end,
 		},
 	  },
 	},
