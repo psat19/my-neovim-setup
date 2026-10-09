@@ -17,6 +17,8 @@ return {
       daily_notes = {
         folder = "daily",
       },
+      -- render-markdown.nvim draws checkboxes, bullets and headings; don't double up
+      ui = { enable = false },
       completion = {
         blink = true,
       },
@@ -29,6 +31,7 @@ return {
       { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Obsidian: Backlinks" },
       { "<leader>ot", "<cmd>ObsidianToday<CR>", desc = "Obsidian: Today's note" },
       { "<leader>of", "<cmd>ObsidianFollowLink<CR>", desc = "Obsidian: Follow link" },
+      { "<leader>ox", "<cmd>ObsidianToggleCheckbox<CR>", desc = "Obsidian: Toggle checkbox" },
     },
   },
 }

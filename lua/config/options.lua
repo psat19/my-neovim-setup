@@ -19,6 +19,11 @@ o.termguicolors = true
 o.completeopt = "menu,menuone,noselect"
 o.clipboard = "unnamedplus"
 
+-- Treesitter-based folds (functions, methods, blocks), computed automatically
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+o.foldlevelstart = 99      -- open everything on load; use zM to fold all
+
 vim.diagnostic.config({
   virtual_text = { prefix = "●" },
   severity_sort = true,

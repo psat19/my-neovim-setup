@@ -48,7 +48,7 @@ vim.keymap.set("n", "<C-down>", "jzz")
 vim.keymap.set("n", "<C-up>", "kzz")
 
 -- keymap to exit terminal mode
-vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<esc><esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 
 --keymap to do nothing when pressing - in normal mode
 vim.keymap.set('n', '-', '<Nop>', { desc = 'do nothing for -' })
