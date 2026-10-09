@@ -5,6 +5,9 @@ return {
     { "<leader>cc", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude Code" },
   },
   opts = {
+    git = {
+      use_git_root = false, -- use nvim's cwd instead of the git root
+    },
     window = {
       position = "float",
       float = {
